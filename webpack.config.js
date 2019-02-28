@@ -1,4 +1,3 @@
-// const HtmlWebPackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
@@ -15,10 +14,6 @@ module.exports = {
         exclude: /node_modules/,
         use: ['babel-loader', 'eslint-loader'],
       },
-      {
-        test: /\.html/,
-        use: ['html-loader'],
-      },
     ],
   },
   output: {
@@ -26,12 +21,6 @@ module.exports = {
     publicPath: '/',
     filename: 'bundle.js'
   },
-  // plugins: [
-  //   new HtmlWebPackPlugin({
-  //     template: './src/index.html',
-  //     filename: './index.html',
-  //   }),
-  // ],
   plugins: [
     new webpack.HotModuleReplacementPlugin()
   ],
